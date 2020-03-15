@@ -15,14 +15,15 @@ using std::thread;
 
 struct ThreadArgs
 {
-	int *foo;
-	int *bar;
+	int foo = 22;
+	int bar = 22;
 };
 
 
-void myThreadFunc(int answer)
+void myThreadFunc(int answer, ThreadArgs *args)
 {
 	cout << "The answer is: " << answer << endl;
+	cout << "The answer is" << *args << endl;
 }
 
 
@@ -32,8 +33,8 @@ int main(int argc, char *argv[])
 
 	// At the moment our program is only running one thread (the initial one the operating system gave us).
 
-	thread myThread(myThreadFunc, answer, 22, 22);
-	ThreadArgs &args(foo, bar);
+	ThreadArgs args;
+	thread myThread(myThreadFunc, answer, &args);
 
 	// Now our program is running two threads in parallel (the initial one, and myThread).
 	

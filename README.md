@@ -1,4 +1,4 @@
-# DataStructures2 - Overall Grade = B+
+# DataStructures2
 
 # Please do not plaigirise this work - it taken me a long time to work on this, please use it as a guide or for inspiration :) 
 
